@@ -1,0 +1,13 @@
+<h1>Events</h1>
+<table class='table table-striped'>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  {{#each event in events}}
+    <tr>
+      <td>{{event.id}}</td>
+      <td>{{#linkTo 'events.show' event}}{{event.event_name}}{{/linkTo}}</td> 
+    </tr>
+  {{/each}}
+</table>
