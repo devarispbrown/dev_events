@@ -8,7 +8,7 @@ gem 'rails', '3.2.11'
 gem 'rails-api'
 gem 'thin'
 gem 'active_model_serializers', :github => 'rails-api/active_model_serializers'
-gem 'sass-rails', '~> 3.2'
+gem 'sass-rails'
 
 group :development, :test do
   gem 'sqlite3'
@@ -24,10 +24,10 @@ group :test do
 end
 
 group :assets do
-  gem 'coffee-rails', '~> 3.2'
+  gem 'coffee-rails'
   gem 'compass-rails'
   gem 'uglifier'
-  gem 'bootstrap-sass', '~> 2.0.3.0'
+  gem 'bootstrap-sass'
   gem 'handlebars_assets'
 end
 
