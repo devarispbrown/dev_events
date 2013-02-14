@@ -5,30 +5,14 @@ App.Router.reopen
 App.Router.map -> 
   @resource 'events', ->
     @route 'new'
+    @route 'edit'
+      path: '/:event_id/edit'
     @route 'show'
       path: '/:event_id'
 
 App.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('application').set('currentRoute', 'home')
-
-#App.EventsIndexRoute = Ember.Route.extend
-#  setupController: (controller, model) ->
-#    @controllerFor('application').set('currentRoute', 'events')
-#
-#App.EventsIndexRoute = Ember.Route.extend
-#  model: ->
-#    App.Event.find()
-#  setupController: (controller, model) ->
-#    controller.set('events', model)
-#    @controllerFor('application').set('currentRoute', 'events')
-#
-#App.EventsShowRoute = Ember.Route.extend
-#  model: (params) ->
-#    App.Event.find(params.event_id)
-#  setupController: (controller, model) ->
-#    controller.set('content', model)
-#    @controllerFor('application').set('currentRoute', 'events')
 
 App.EventsRoute = Ember.Route.extend
   setupController: ->
@@ -44,6 +28,13 @@ App.EventsIndexRoute = App.EventsRoute.extend
 App.EventsShowRoute = App.EventsRoute.extend    
   model: (params) ->
     App.Event.find(params.event_id)
+  setupController: (controller, model) ->
+    @_super()
+    controller.set('content', model)
+
+App.EventsNewRoute = App.EventsRoute.extend
+  model: ->
+    App.Event.createRecord()
   setupController: (controller, model) ->
     @_super()
     controller.set('content', model)
