@@ -20,4 +20,13 @@ class EventsController < ApplicationController
 
     render json: event
   end
+
+  def destroy
+    user = User.find(params[:id])
+    if user.destroy
+      render json: user, status: 204
+    else
+      render json: user
+    end
+  end
 end

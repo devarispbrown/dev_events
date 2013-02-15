@@ -1,4 +1,9 @@
 App.EventsEditController = Ember.ObjectController.extend
+  destroy: ->
+    @content.deleteRecord()
+    @store.commit()
+    @transitionToRoute 'events.index'
+    
   save: ->
     @store.commit()
     @transitionToRoute 'events.show', @content
