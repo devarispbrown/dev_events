@@ -7,3 +7,6 @@ App.EventsEditController = Ember.ObjectController.extend
     if @content.isDirty
       @content.rollback()
     @transitionToRoute 'events.show', @content
+
+  headerTitle: 'Edit'
+  buttonTitle: 'Update'

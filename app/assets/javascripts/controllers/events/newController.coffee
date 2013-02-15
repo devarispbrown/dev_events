@@ -10,3 +10,6 @@ App.EventsNewController = Ember.ObjectController.extend
   afterSave: ->
     @content.removeObserver 'id', @, 'afterSave'
     @transitionToRoute('events.show', @content)
+
+  headerTitle: 'Create'
+  buttonTitle: 'Create'
