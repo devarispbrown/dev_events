@@ -1,0 +1,21 @@
+<h1>Edit {{event_name}}</h1>
+<form>
+  <fieldset>
+    <div>
+      <label {{bindAttr for="eventNameField.elementId"}}>Event Name</label>
+      {{view Ember.TextField valueBinding='event_name' name='event_name' viewName='eventNameField'}}
+    </div>
+    <div>
+      <label {{bindAttr for='eventLocationField.elementId'}}>Event Location</label>
+      {{view Ember.TextField valueBinding='event_location' name='event_location' viewName='eventLocationField'}}
+    </div>
+    <div>
+      <label {{bindAttr for='eventDescriptionField.elementId'}}>Event Description</label>
+      {{view Ember.TextArea valueBinding='event_description' name='event_description' viewName='eventDescriptionField'}}
+    </div>
+    <a href='#' {{action save}} class='btn btn-success'>Edit</a>
+  </fieldset>
+</form>
+<div class='page-header'></div>
+
+<a href='#' {{action cancel target='controller'}} class='btn btn-inverse'>Cancel</a>
